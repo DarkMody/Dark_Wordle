@@ -103,8 +103,10 @@ window.addEventListener("keydown", (event) => {
     let row = rows[rowPlace].children;
     if (row[0] != event.target) {
       let idx = Array.from(row).indexOf(event.target);
-      row[idx - 1].value = "";
-      row[idx - 1].focus();
+      if (event.target.value == "") {
+        row[idx - 1].value = "";
+        row[idx - 1].focus();
+      }
     }
     event.target.value = "";
   }
