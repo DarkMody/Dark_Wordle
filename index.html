@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/Wordle_Logo.svg.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <title>Guess The Word</title>
+  </head>
+  <body>
+    <header><h1>Guess The Word Game</h1></header>
+    <section>
+      <div id="left">
+        <div class="row">
+          <input type="text" autofocus />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </div>
+        <div class="row">
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </div>
+        <div class="row">
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </div>
+        <div class="row">
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </div>
+        <div class="row">
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </div>
+        <div class="row">
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </div>
+        <div class="but">
+          <button id="enter">Enter</button>
+        </div>
+        <h2 id="message" style="display: none"></h2>
+      </div>
+      <div id="right">
+        <h2>What color means ?</h2>
+        <div>1- The letter exists in the word and in right place</div>
+        <div>2- The letter exists in the word but in wrong place</div>
+        <div>3- The letter doesn't exist in the word</div>
+        <div class="but">
+          <button id="new-game">New Game</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+      Made By
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/mahmoud-mohamed-194441348/?skipRedirect=true"
+        >Mahmoud Mohamed (DarkMody)</a
+      >
+    </footer>
+  </body>
+  <script src="words.js"></script>
+  <script src="script.js"></script>
+</html>
