@@ -43,7 +43,6 @@ document.getElementById("new-game").addEventListener("click", () => {
     ele.disabled = true;
   });
   Array.from(keyBoard.children).forEach((ele) => {
-    console.log(ele);
     ele.style.backgroundColor = "var(--blue)";
   });
   word = words[Math.floor(Math.random() * words.length)].toLowerCase();
