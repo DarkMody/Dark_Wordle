@@ -9,6 +9,7 @@
 :root {
   --green: #1dd1a1;
   --yellow: #feca57;
+  --blue: #23368d;
 }
 body {
   background-color: #130f40;
@@ -39,26 +40,43 @@ section #left div input {
   max-width: 80px;
   max-height: 80px;
   outline: none;
-  /* margin: 3px; */
   margin: 7px 1px;
   font-size: 4vw;
   text-align: center;
   color: black;
   background-color: #4f75be;
 }
-section #right {
+section #right,
+#down {
   font-size: 2vw;
+  text-align: center;
 }
-section #right div {
+section #right #keys {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+section #right #keys span {
+  /* background-color: var(--blue); */
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px;
+}
+#down {
+  grid-column: 1 / span 2;
+  margin-bottom: 20px;
+}
+
+section #down div {
   margin-top: 40px;
 }
-section #right div:nth-of-type(1) {
+section #down div:nth-of-type(1) {
   color: var(--green);
 }
-section #right div:nth-of-type(2) {
+section #down div:nth-of-type(2) {
   color: var(--yellow);
 }
-section #right div:nth-of-type(3) {
+section #down div:nth-of-type(3) {
   color: black;
 }
 .but {
@@ -115,13 +133,17 @@ a {
     height: 14vw;
     font-size: 9vw;
   }
+  #down {
+    grid-column: 1 / span 1;
+    font-size: 4vw;
+  }
   section #right {
     font-size: 7vw;
-    margin-left: 10px;
+    margin: 10px;
   }
+
   #message {
     margin: 20px 0;
-
     font-size: 7vw;
   }
 }

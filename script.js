@@ -3,6 +3,16 @@ let inputs = document.getElementsByTagName("input");
 let rows = document.getElementsByClassName("row");
 let rowPlace = 0;
 let message = document.getElementById("message");
+let keyBoard = document.getElementById("keys");
+
+// Making KeyBoard Buttons
+for (let i = 0; i < 26; i++) {
+  let temp = document.createElement("span");
+  temp.innerHTML = String.fromCharCode(65 + i);
+  temp.id = String.fromCharCode(65 + i);
+  temp.style.backgroundColor = "var(--blue)";
+  keyBoard.appendChild(temp);
+}
 
 // Row Editing
 function enableRow() {
@@ -30,6 +40,11 @@ document.getElementById("new-game").addEventListener("click", () => {
     ele.value = "";
     ele.style.color = "black";
     ele.style.backgroundColor = "#4f75be";
+    ele.disabled = true;
+  });
+  Array.from(keyBoard.children).forEach((ele) => {
+    console.log(ele);
+    ele.style.backgroundColor = "var(--blue)";
   });
   word = words[Math.floor(Math.random() * words.length)].toLowerCase();
   rowPlace = 0;
@@ -51,9 +66,11 @@ document.getElementById("enter").addEventListener("click", () => {
     if (words.includes(save) || words.includes(save.toLowerCase())) {
       save = save.toLowerCase();
       for (let i = 0; i < 5; i++) {
+        let letter = document.getElementById(save[i].toUpperCase()); // To Make Edit in KeyBoard
         rows[rowPlace].children[i].disabled = true;
         if (save[i] == word[i]) {
           rows[rowPlace].children[i].style.backgroundColor = "var(--green)";
+          letter.style.backgroundColor = "var(--green)";
           checked[i] = true;
         } else {
           let state = false;
@@ -62,11 +79,15 @@ document.getElementById("enter").addEventListener("click", () => {
               state = checked[j] = true;
               rows[rowPlace].children[i].style.backgroundColor =
                 "var(--yellow)";
+              if (letter.style.backgroundColor == "var(--blue)") {
+                letter.style.backgroundColor = "var(--yellow)";
+              }
               break;
             }
           }
           if (!state) {
             rows[rowPlace].children[i].style.backgroundColor = "black";
+            letter.style.backgroundColor = "black";
             rows[rowPlace].children[i].style.color = "white";
           }
         }
@@ -75,8 +96,7 @@ document.getElementById("enter").addEventListener("click", () => {
         message.innerHTML = "Winner";
         message.style.color = "var(--green)";
         message.style.display = "block";
-        document.getElementById("enter").disabled =
-          WebTransportDatagramDuplexStream;
+        document.getElementById("enter").disabled = true;
       } else {
         rowPlace++;
         if (rowPlace <= 5) {
